@@ -1,6 +1,6 @@
 // Script
 console.log("WELCOME TO ROCK PAPER SCISSORS GAME");
-alert("WELCOME TO ROCK, PAPER & SCISSORS GAME!");
+alert("WELCOME TO ROCK PAPER SCISSORS GAME!");
 
 function getComputerChoice(){
    let result = Math.random();
