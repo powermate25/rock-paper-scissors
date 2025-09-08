@@ -64,7 +64,7 @@ function playGame(){
         alert( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
         // alert(winner);   
         alert("Ready for the next round?");  }  
-        if (rnd === 4) {alert("Final Round! Ready?")};   
+        if (rnd === 4) {alert("Final Round. Get Ready!")};   
         if (rnd === 5 && humanScore > computerScore){alert("Congratulation! You're the final winner." + " Final Score: " + humanScore + " - " + computerScore)}
         else if (rnd === 5 && humanScore < computerScore) alert("CPU won!" + " | Final Score: " + humanScore + " - " + computerScore);
         else if (rnd === 5 && humanScore === computerScore) alert("No winner! This one tough");  
