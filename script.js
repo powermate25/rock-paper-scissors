@@ -1,5 +1,5 @@
 // Script
-console.log("WELCOME TO ROCK, PAPER & SCISSORS GAME");
+console.log("WELCOME TO ROCK PAPER SCISSORS GAME");
 alert("WELCOME TO ROCK, PAPER & SCISSORS GAME!");
 
 function getComputerChoice(){
@@ -11,11 +11,11 @@ function getComputerChoice(){
 // console.log( getComputerChoice() );     
 
  function getHumanChoice(){
- let userInput = prompt("What's your choice?");
+ let userInput = prompt("What's your choice? | 1 - Rock | 2 - Paper | 3 - Scissors");
  let userInputLowerCase = userInput.toLowerCase();
-   if(userInputLowerCase === "rock"){ return "Rock" }
-   else if (userInputLowerCase === "paper"){return "Paper"}
-   else if (userInputLowerCase === "scissors") {return "Scissors"}
+   if(userInputLowerCase === "rock" || userInput === "1"){ return "Rock" }
+   else if (userInputLowerCase === "paper" || userInput === "2"){return "Paper"}
+   else if (userInputLowerCase === "scissors" || userInput === "3") {return "Scissors"}
    else if (userInputLowerCase == "") { return "Please pick rock, paper or scissors"}
    else { return "Please pick rock, paper or scissors"}
 }    
@@ -34,7 +34,7 @@ let tie = "- Tie, let's try again!"
     
  function playRound( humanChoice = getHumanChoice() /* getHumanChoice()*/, computerChoice = getComputerChoice() ){
     
-
+ 
  let userInputLowerCase = humanChoice.toLowerCase();     
 
     if (userInputLowerCase == "rock" && computerChoice == "Rock") return tie + " " + humanChoice.toUpperCase() + " vs " + computerChoice.toUpperCase()
