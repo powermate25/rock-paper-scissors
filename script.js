@@ -2,13 +2,14 @@
 console.log("WELCOME TO ROCK PAPER SCISSORS GAME");
 alert("WELCOME TO ROCK PAPER SCISSORS GAME!");
 
+
 function getComputerChoice(){
    let result = Math.random();
    if(result <= 0.3){ return "Rock" }
    else if (result >= 0.6){return "Paper"}
    else {return "Scissors"}; 
 }
-// console.log( getComputerChoice() );     
+    
 
  function getHumanChoice(){
  let userInput = prompt("What's your choice? | 1 - Rock | 2 - Paper | 3 - Scissors");
@@ -20,22 +21,17 @@ function getComputerChoice(){
    else { return "Please pick rock, paper or scissors"}
 }    
      
-// console.log ( getHumanChoice() );        
-   
-
-// let humanScore = 0;
-// let computerScore = 0; 
 
 let humanScore = 0;
 let computerScore = 0; 
 let win = "You win!"
 let lose = "CPU wins"
-let tie = "- Tie, let's try again!" 
+let tie = "Tie. Let's try again!" 
     
- function playRound( humanChoice = getHumanChoice() /* getHumanChoice()*/, computerChoice = getComputerChoice() ){
+function playRound( humanChoice = getHumanChoice() /* getHumanChoice()*/, computerChoice = getComputerChoice() ){
     
  
- let userInputLowerCase = humanChoice.toLowerCase();     
+let userInputLowerCase = humanChoice.toLowerCase();     
 
     if (userInputLowerCase == "rock" && computerChoice == "Rock") return tie + " " + humanChoice.toUpperCase() + " vs " + computerChoice.toUpperCase()
     else if (userInputLowerCase == "paper" && computerChoice == "Rock") return win + " | " + humanChoice.toUpperCase() + " wraps " + computerChoice.toUpperCase() + " | Your score: " + (++humanScore)
@@ -48,10 +44,7 @@ let tie = "- Tie, let's try again!"
     else if (userInputLowerCase == "rock" && computerChoice == "Scissors") return win + " | " + humanChoice.toUpperCase() + " crushes " + computerChoice.toUpperCase() + " | Your score: " + (++humanScore)
     else if (userInputLowerCase == "paper" && computerChoice == "Scissors") return lose + " | " + computerChoice.toUpperCase() + " cut " + humanChoice.toUpperCase() + " | CPU score: " + (++computerScore)
     else if (userInputLowerCase == "scissors" && computerChoice == "Scissors") return tie + " " + humanChoice.toUpperCase() + " vs " + computerChoice.toUpperCase()
-};    
-
-  
-//    console.log ( playRound() ) ;      
+};        
     
 
 function playGame(){
@@ -67,18 +60,15 @@ function playGame(){
         if (rnd === 4) {alert("Final Round. Get Ready!")};   
         if (rnd === 5 && humanScore > computerScore){alert("Congratulation! You're the final winner." + " Final Score: " + humanScore + " - " + computerScore)}
         else if (rnd === 5 && humanScore < computerScore) alert("CPU won!" + " | Final Score: " + humanScore + " - " + computerScore);
-        else if (rnd === 5 && humanScore === computerScore) alert("No winner! This one tough");  
+        else if (rnd === 5 && humanScore === computerScore) alert("No winner! This one tough"); 
         
     }   
-    }   
-                                        
-confirm(" GAME OVER. Try again?",  playGame(), );
+    };   
 
 
+playGame();
+confirm("GAME OVER. Play again?", window.location.reload());
 
-
-console.log(playGame()); 
-// playGame();
 
 
   
