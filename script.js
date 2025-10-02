@@ -66,6 +66,7 @@ function playGameBkp(){
 
 function playGame(){
     let winner = playRound()
+
     const result = document.querySelector("#result")
     const score = document.querySelector("#score")
     const newDiv = document.createElement("div")
@@ -73,8 +74,29 @@ function playGame(){
     const scorePara = document.createElement("p")
     winnerPara.textContent = winner
     scorePara.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore)
-    result.append(winnerPara)
-    score.append(scorePara);
+    result.textContent = winner
+    score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore); 
+
+    if(humanScore === 5){
+        result.textContent = winner
+        score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
+        score.append(newDiv.textContent="Congratulation! You're the final winner.")
+        // alert("Congratulation! You're the final winner.")
+        resetContainer.append(resetButton)
+        resetButton.addEventListener("click", () => {window.location.reload()})
+      // confirm("GAME OVER. Play again?", window.location.reload())
+    }
+    else if (computerScore === 5){
+        result.textContent = winner
+        score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
+        score.append(newDiv.textContent="CPU won!")
+       // alert("CPU won!")
+       resetContainer.append(resetButton)
+       resetButton.addEventListener("click", () => {window.location.reload()})
+       
+
+      // confirm("GAME OVER. Play again?", window.location.reload())
+    }
         // alert(winner);   
        
     };
@@ -110,5 +132,10 @@ btnScissors.addEventListener(
         playGame()
        // confirm("GAME OVER. Play again?", window.location.reload())
     }  
-) 
+)
 
+       const resetButton = document.createElement("button")
+       resetButton.classList.add("resetbutton")
+       resetButton.textContent = "PLAY AGAIN?"
+       resetContainer = document.querySelector("#reset")
+       
