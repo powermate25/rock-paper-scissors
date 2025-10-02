@@ -5,15 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rock Paper Scissors</title>
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./style-animation.css">
         <script src="./script.js" defer></script>
     </head>
 </html>
 <body>
-    <div class="test-div">ROCK PAPER SCISSORS GAME</div>
+    <div class="game-title">ROCK PAPER SCISSORS GAME</div>
+    
+    <div class="stars"></div>
+    <div class="img-container" id="allImage">
+    <div class="choice-container" id="userImage"></div>
+    <div class="choice-container" id="cpuImage"></div>
+    </div>
+
+
     <div class="buttons">
-        <button id="rock">ROCK</button>
-        <button id="paper">PAPER</button>
-        <button id="scissors">SCISSORS</button>
+        <button id="rock"><img src="./images/hand-back-fist-solid-full.svg" height="20px">ROCK</button>
+        <button id="paper"><img src="./images/hand-solid-full.svg" height="20px">PAPER</button>
+        <button id="scissors"><img src="./images/hand-scissors-solid-full.svg" height="20px">SCISSORS</button>
     </div>
     <div class="result-div" id="result"></div>
     <div class="score-div" id="score"></div>
