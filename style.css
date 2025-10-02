@@ -180,7 +180,8 @@ button:focus {
     justify-content: center;
     align-items: center;
     width: 50vw;
-    margin: auto;
+    height: fit-content;
+    margin: 0px;
     text-align: center;
     border-radius: 15px; 
 
