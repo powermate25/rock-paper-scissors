@@ -32,18 +32,7 @@ let tie = "Tie! Let's try again. 😐"
 
 function playRound( humanChoice = getHumanChoice(), computerChoice = getComputerChoice() ){
 
-       const rockImgCpu = document.createElement("img")
-       rockImgCpu.src = "./images/cpu/cpu-hand-back-fist-solid-full.svg";
-       rockImgCpu.height = 100;
        
-
-       const paperImgCpu = document.createElement("img")
-       paperImgCpu.src = "./images/cpu/cpu-hand-solid-full.svg";
-       paperImgCpu.height = 100;
-
-       const scissorsImgCpu = document.createElement("img")
-       scissorsImgCpu.src = "./images/cpu/cpu-hand-scissors-solid-full.svg";
-       scissorsImgCpu.height = 100;
 
        if(computerChoice === "rock"){ document.querySelector("#cpuImage").replaceChildren(rockImgCpu) }
        else if(computerChoice === "paper"){ document.querySelector("#cpuImage").replaceChildren(paperImgCpu) }
@@ -192,7 +181,23 @@ btnScissors.addEventListener(
        scissorsImg.src = "./images/user/hand-scissors-solid-full.svg";
        scissorsImg.height = 100;
 
-    
+       const rockImgCpu = document.createElement("img")
+       rockImgCpu.src = "./images/cpu/cpu-hand-back-fist-solid-full.svg";
+       rockImgCpu.height = 100;
+       
+
+       const paperImgCpu = document.createElement("img")
+       paperImgCpu.src = "./images/cpu/cpu-hand-solid-full.svg";
+       paperImgCpu.height = 100;
+
+       const scissorsImgCpu = document.createElement("img")
+       scissorsImgCpu.src = "./images/cpu/cpu-hand-scissors-solid-full.svg";
+       scissorsImgCpu.height = 100;
+
+   const imageContainer = document.querySelector("#allImage")
+   userImage =  document.querySelector("#userImage")
+   cpuImage =  document.querySelector("#cpuImage")
+
 resetButton.addEventListener(
     "click", () => {
         humanScore = 0
@@ -202,6 +207,8 @@ resetButton.addEventListener(
         btnScissors.disabled = false
         score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
         info.textContent= ""
-        resetContainer.textContent = "" 
-    } 
+        resetContainer.textContent = ""
+        document.querySelector("#userImage").replaceChildren("")
+        document.querySelector("#cpuImage").replaceChildren("")
+    }  
 )
