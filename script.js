@@ -205,7 +205,7 @@ resetButton.addEventListener(
         btnRock.disabled = false
         btnPaper.disabled = false 
         btnScissors.disabled = false
-        score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
+        score.textContent = ""
         info.textContent= ""
         resetContainer.textContent = ""
         document.querySelector("#userImage").replaceChildren("")
