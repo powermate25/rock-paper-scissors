@@ -79,21 +79,26 @@ function playRound( humanChoice = getHumanChoice(), computerChoice = getComputer
     
 /// Playgame logic
 
-function playGame(){
-    let winner = playRound()
-
-    const result = document.querySelector("#result")
+const result = document.querySelector("#result")
     const score = document.querySelector("#score")
     const info = document.querySelector("#info")
     const newDiv = document.createElement("div")
     const winnerPara = document.createElement("p")
     const scorePara = document.createElement("p")
+
+function playGame(){
+    let winner = playRound()
+
+    
     winnerPara.textContent = winner
     scorePara.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore)
     result.textContent = winner
     score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore); 
 
     if(humanScore === 5){
+        btnRock.disabled = true
+        btnPaper.disabled = true
+        btnScissors.disabled = true
         result.textContent = winner
         score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
         info.append(newDiv.textContent= "Congratulation! You're the final winner. 🏆🎉")
@@ -105,10 +110,15 @@ function playGame(){
 
         resetContainer.append(resetButton)
         resetContainer.appendChild(cancelButton)
-        resetButton.addEventListener("click", () => {window.location.reload()})
+        // resetButton.addEventListener("click", () => {window.location.reload()})
+        resetButton
+        
         cancelButton.addEventListener("click",() => {alert("GAME OVER!")})
     }
     else if (computerScore === 5){
+        btnRock.disabled = true
+        btnPaper.disabled = true
+        btnScissors.disabled = true
         result.textContent = winner
         score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
         info.append(newDiv.textContent= "CPU WON! 😎") 
@@ -119,7 +129,8 @@ function playGame(){
 
        resetContainer.append(resetButton)
        resetContainer.appendChild(cancelButton)
-       resetButton.addEventListener("click", () => {window.location.reload()})
+      // resetButton.addEventListener("click", () => {window.location.reload()})
+       resetButton
        cancelButton.addEventListener("click",() => {alert("GAME OVER!")})
        
     }
@@ -158,6 +169,7 @@ btnScissors.addEventListener(
     }  
 )
 
+
        const resetButton = document.createElement("button")
        resetButton.classList.add("resetbutton")
        resetButton.textContent = "YES!"
@@ -180,4 +192,16 @@ btnScissors.addEventListener(
        scissorsImg.src = "./images/user/hand-scissors-solid-full.svg";
        scissorsImg.height = 100;
 
-       
+    
+resetButton.addEventListener(
+    "click", () => {
+        humanScore = 0
+        computerScore = 0
+        btnRock.disabled = false
+        btnPaper.disabled = false 
+        btnScissors.disabled = false
+        score.textContent = ( "Your score: " + humanScore + " | " + "CPU score: " + computerScore);
+        info.textContent= ""
+        resetContainer.textContent = "" 
+    } 
+)
