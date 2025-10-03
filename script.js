@@ -207,6 +207,7 @@ resetButton.addEventListener(
         btnScissors.disabled = false
         score.textContent = ""
         info.textContent= ""
+        result.textContent = ""
         resetContainer.textContent = ""
         document.querySelector("#userImage").replaceChildren("")
         document.querySelector("#cpuImage").replaceChildren("")
